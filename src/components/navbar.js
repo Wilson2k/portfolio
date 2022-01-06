@@ -1,8 +1,8 @@
 import React, { createContext } from 'react';
+import {makeStyles} from '@material-ui/core/styles';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
-import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grow from '@mui/material/Grow';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -14,6 +14,12 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { useDimensions } from '../DimensionsProvider';
 
 export const NavContext = createContext();
+
+const useStyles = makeStyles({
+  paper: {
+    background: "black"
+  }
+});
 
 export default function NavBar() {
   const navButtons = ["About", "Experience", "Projects", "Education", "Skills", "Contact"];
@@ -62,7 +68,7 @@ export default function NavBar() {
             </IconButton>
           </Toolbar>
         </AppBar>
-        <NavContext.Provider value={{ open, handleIconClick }}>
+        <NavContext.Provider value={{ open, handleIconClick, navButtons }}>
           <NavPopover />
         </NavContext.Provider>
       </Box>
@@ -71,37 +77,29 @@ export default function NavBar() {
 }
 
 function NavPopover() {
+  const classes = useStyles();
   const { width } = useDimensions();
   const wide = (width > 750 ? true : false);
   if (!wide) {
     return (
       <NavContext.Consumer>
-        {({ open, handleIconClick }) => (
+        {({ open, handleIconClick, navButtons }) => (
           <Drawer
             variant='temporary'
             anchor='top'
             open={open}
+            className={classes.paper}
           >
-            <Paper square
-              sx={{
-                height: "100vh",
-                alignItems: "center",
-                textAlign: "center",
-                justifyContent: "center",
-                background: "black",
-              }}>
               <List>
-                <ListItem button={true} onClick={handleIconClick}>
-                  <ListItemText primary={'Close'} />
+                <ListItem button onClick={handleIconClick}>
+                  <ListItemText primary={"Close"} />
                 </ListItem>
-                <ListItem button={true}>
-                  <ListItemText primary={'About'} />
+                {navButtons.map((label, index) => (
+                <ListItem key={index} button>
+                  <ListItemText primary={label} />
                 </ListItem>
-                <ListItem button={true}>
-                  <ListItemText primary={'Experience'} />
-                </ListItem>
+                ))}
               </List>
-            </Paper>
           </Drawer>
         )}
       </NavContext.Consumer>
