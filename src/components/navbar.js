@@ -68,6 +68,7 @@ export default function NavBar() {
             </IconButton>
           </Toolbar>
         </AppBar>
+        <Toolbar position="fixed" sx={{ bgcolor: "black" }} />
         <NavContext.Provider value={{ open, handleIconClick, navButtons }}>
           <NavPopover />
         </NavContext.Provider>
