@@ -1,5 +1,5 @@
 import React, { createContext } from 'react';
-import {makeStyles} from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
@@ -91,26 +91,32 @@ function NavPopover() {
             open={open}
             className={classes.paper}
           >
-            <Box sx={{flexGrow: 1, bgcolor: "black", height: "100vh", borderBottom: "solid gray 1px" }}>
-                <ListItem button onClick={handleIconClick} sx={{justifyContent: "right"}}>
-                    <IconButton
-                      sx={{color: "white"}}
-                      onClick={handleIconClick}
-                    >
-                      <CloseIcon />
-                    </IconButton>
+            <Box sx={{ flexGrow: 1, bgcolor: "black", height: "100vh", borderBottom: "solid gray 1px", px: 2 }}>
+              <ListItem button onClick={handleIconClick} sx={{ justifyContent: "right" }}>
+                <IconButton
+                  sx={{ color: "white" }}
+                  onClick={handleIconClick}
+                >
+                  <CloseIcon />
+                </IconButton>
+              </ListItem>
+              {navButtons.map((label, index) => (
+                <ListItem button key={index}
+                  sx={{
+                    '&:hover': {
+                      backgroundColor: '#424242',
+                    },
+                    borderRadius: 4,
+                  }}>
+                  <ListItemText
+                    sx={{ color: "white", textAlign: "center", my: 2 }}
+                    primaryTypographyProps={{
+                      variant: 'h5',
+                      fontWeight: 'medium',
+                    }}
+                    primary={label} />
                 </ListItem>
-                {navButtons.map((label, index) => (
-                  <ListItem button key={index}>
-                    <ListItemText
-                      sx={{color: "white", textAlign: "center", my: 2}}
-                      primaryTypographyProps={{
-                        variant: 'h5',
-                        fontWeight: 'medium',
-                      }}
-                      primary={label}/>
-                  </ListItem>
-                ))}
+              ))}
             </Box>
           </Drawer>
         )}
