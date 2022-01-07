@@ -7,10 +7,10 @@ import Box from '@mui/material/Box';
 import Grow from '@mui/material/Grow';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
-import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+import Drawer from '@mui/material/Drawer';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import Typography from '@mui/material/Typography';
 import { useDimensions } from '../DimensionsProvider';
 
 export const NavContext = createContext();
@@ -91,16 +91,20 @@ function NavPopover() {
             open={open}
             className={classes.paper}
           >
-              <List>
+            <Box sx={{flexGrow: 1, bgcolor: "black", height: "100vh", borderBottom: "solid gray 1px" }}>
                 <ListItem button onClick={handleIconClick}>
-                  <ListItemText primary={"Close"} />
+                  <ListItemText
+                    sx={{color: "white", textAlign: "center"}}
+                    primary="Close"/>
                 </ListItem>
                 {navButtons.map((label, index) => (
-                <ListItem key={index} button>
-                  <ListItemText primary={label} />
-                </ListItem>
+                  <ListItem button key={index}>
+                    <ListItemText
+                      sx={{color: "white", textAlign: "center"}}
+                      primary={label}/>
+                  </ListItem>
                 ))}
-              </List>
+            </Box>
           </Drawer>
         )}
       </NavContext.Consumer>
