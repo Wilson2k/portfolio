@@ -6,11 +6,11 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Grow from '@mui/material/Grow';
 import MenuIcon from '@material-ui/icons/Menu';
-import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
+import IconButton from '@mui/material/IconButton';
 import Drawer from '@mui/material/Drawer';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import Typography from '@mui/material/Typography';
 import { useDimensions } from '../DimensionsProvider';
 
 export const NavContext = createContext();
@@ -92,15 +92,22 @@ function NavPopover() {
             className={classes.paper}
           >
             <Box sx={{flexGrow: 1, bgcolor: "black", height: "100vh", borderBottom: "solid gray 1px" }}>
-                <ListItem button onClick={handleIconClick}>
-                  <ListItemText
-                    sx={{color: "white", textAlign: "center"}}
-                    primary="Close"/>
+                <ListItem button onClick={handleIconClick} sx={{justifyContent: "right"}}>
+                    <IconButton
+                      sx={{color: "white"}}
+                      onClick={handleIconClick}
+                    >
+                      <CloseIcon />
+                    </IconButton>
                 </ListItem>
                 {navButtons.map((label, index) => (
                   <ListItem button key={index}>
                     <ListItemText
-                      sx={{color: "white", textAlign: "center"}}
+                      sx={{color: "white", textAlign: "center", my: 2}}
+                      primaryTypographyProps={{
+                        variant: 'h5',
+                        fontWeight: 'medium',
+                      }}
                       primary={label}/>
                   </ListItem>
                 ))}
