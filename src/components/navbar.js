@@ -11,7 +11,7 @@ import IconButton from '@mui/material/IconButton';
 import Drawer from '@mui/material/Drawer';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import { useDimensions } from '../DimensionsProvider';
+import { useDimensions } from './DimensionsProvider';
 
 export const NavContext = createContext();
 

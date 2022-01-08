@@ -6,7 +6,8 @@ import Fade from '@mui/material/Fade';
 import NavBar from './components/navbar';
 import Typography from '@mui/material/Typography';
 import { createTheme, responsiveFontSizes, ThemeProvider } from '@mui/material/styles';
-import DimensionsProvider from './DimensionsProvider';
+import DimensionsProvider from './components/DimensionsProvider';
+import FadeInBox from './components/FadeInBox';
 
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
@@ -27,7 +28,7 @@ function App() {
                 background: "black"
               }}>
               <Fade in={true} timeout={6000}>
-                <Paper sx={{ padding: 5, background: "transparent", color: "white" }}>
+                <Paper sx={{ padding: 5, background: "transparent", color: "white", height: "100vh" }}>
                   <ThemeProvider theme={theme}>
                     <Typography variant="h2" component="div" sx={{ fontFamily: "Montserrat" }}>
                       WILSON CHEN
@@ -38,6 +39,15 @@ function App() {
                   </ThemeProvider>
                 </Paper>
               </Fade>
+              <FadeInBox>
+                <Paper sx={{ padding: 5, background: "#3d5afe", color: "white" }}>
+                  <ThemeProvider theme={theme}>
+                    <Typography variant="h2" component="div" sx={{ fontFamily: "Montserrat" }}>
+                      WILSON CHEN
+                    </Typography>
+                  </ThemeProvider>
+                </Paper>
+              </FadeInBox>
             </Paper>
           </Grid>
         </Grid>
