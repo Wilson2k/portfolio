@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import './styles.css';
+import '../styles.css';
 
 // Resource used: https://codesandbox.io/s/beautiful-wiles-k23w5?from-embed=&file=/src/styles.css:59-378
 

@@ -11,3 +11,6 @@
   transform: none;
   visibility: visible;
 }
+html {
+  scroll-behavior: smooth;
+}

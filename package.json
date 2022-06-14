@@ -5,18 +5,17 @@
   "author": "Wilson Chen <wilsonchen819@gmail.com>",
   "license": "UNLICENSED",
   "dependencies": {
-    "@emotion/react": "^11.7.1",
-    "@emotion/styled": "^11.6.0",
+    "@emotion/react": "*",
+    "@emotion/styled": "*",
     "@material-ui/core": "*",
     "@material-ui/icons": "*",
-    "@mui/material": "^5.2.7",
+    "@mui/material": "*",
     "prop-types": "*",
     "react": "*",
     "react-dom": "*"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "*",
-    "@testing-library/react": "*",
     "@testing-library/user-event": "*",
     "bestzip": "*",
     "eslint-config-google": "*",

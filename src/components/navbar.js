@@ -1,5 +1,4 @@
-import React, { createContext } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
@@ -11,21 +10,13 @@ import IconButton from '@mui/material/IconButton';
 import Drawer from '@mui/material/Drawer';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import { useDimensions } from './DimensionsProvider';
+import { useDimensions } from '../util/DimensionsProvider';
 
-export const NavContext = createContext();
-
-const useStyles = makeStyles({
-  paper: {
-    background: "black"
-  }
-});
-
-export default function NavBar() {
+export default function NavBar(props) {
   const navButtons = ["About", "Experience", "Projects", "Education", "Skills", "Contact"];
   const { width } = useDimensions();
   const wide = (width > 750 ? true : false);
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleIconClick = () => {
     setOpen(!open);
   };
@@ -38,6 +29,7 @@ export default function NavBar() {
               {navButtons.map((label, index) => (
                 <Button
                   key={index}
+                  onClick={props.scrollArray[index]}
                   color="inherit"
                   sx={{
                     ':hover': {
@@ -69,41 +61,34 @@ export default function NavBar() {
           </Toolbar>
         </AppBar>
         <Toolbar position="fixed" sx={{ bgcolor: "black" }} />
-        <NavContext.Provider value={{ open, handleIconClick, navButtons }}>
-          <NavPopover />
-        </NavContext.Provider>
-      </Box>
-    );
-  }
-}
-
-function NavPopover() {
-  const classes = useStyles();
-  const { width } = useDimensions();
-  const wide = (width > 750 ? true : false);
-  if (!wide) {
-    return (
-      <NavContext.Consumer>
-        {({ open, handleIconClick, navButtons }) => (
-          <Drawer
+        <Drawer
             variant='temporary'
             anchor='top'
             open={open}
-            className={classes.paper}
+            sx={{ background: 'black'}}
           >
             <Box sx={{ flexGrow: 1, bgcolor: "black", height: "100vh", borderBottom: "solid gray 1px", px: 2 }}>
-              <ListItem button onClick={handleIconClick} sx={{ justifyContent: "right" }}>
+              <ListItem sx={{ justifyContent: "right" }}>
                 <IconButton
-                  sx={{ color: "white" }}
+                  sx={{
+                  ':hover': {
+                    backgroundColor: '#424242',
+                  },
+                  color: "white",
+                  }}
                   onClick={handleIconClick}
                 >
                   <CloseIcon />
                 </IconButton>
               </ListItem>
               {navButtons.map((label, index) => (
-                <ListItem button key={index}
+                <ListItem 
+                  button 
+                  key={index}
+                  onClick={props.scrollArray[index]}
+                  onClickCapture={handleIconClick}
                   sx={{
-                    '&:hover': {
+                    ':hover': {
                       backgroundColor: '#424242',
                     },
                     borderRadius: 4,
@@ -119,8 +104,7 @@ function NavPopover() {
               ))}
             </Box>
           </Drawer>
-        )}
-      </NavContext.Consumer>
+      </Box>
     );
   }
 }
