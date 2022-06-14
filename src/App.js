@@ -7,12 +7,17 @@ import NavBar from './components/NavBar';
 import Typography from '@mui/material/Typography';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import IconButton from '@mui/material/IconButton';
-import { createTheme, responsiveFontSizes, ThemeProvider } from '@mui/material/styles';
 import DimensionsProvider from './util/DimensionsProvider';
-import FadeInBox from './util/FadeInSection';
+import { ThemeProvider } from '@mui/material/styles';
+import theme from './util/ResponsiveFont';
+// Import info sections of page
+import AboutBox from './components/InfoBoxes/AboutBox';
+import ContactBox from './components/InfoBoxes/ContactBox';
+import EducationBox from './components/InfoBoxes/EducationBox';
+import ProjectBox from './components/InfoBoxes/ProjectsBox';
+import SkillsBox from './components/InfoBoxes/SkillsBox';
+import ExperienceBox from './components/InfoBoxes/ExperienceBox';
 
-let theme = createTheme();
-theme = responsiveFontSizes(theme);
 
 // Function that creates a state for scrolling to a section of page
 const useScroll = () => {
@@ -53,83 +58,29 @@ function App() {
                     <Typography variant="h2" component="div" sx={{ fontFamily: "Montserrat" }}>
                       WILSON CHEN
                     </Typography>
-                    <Typography variant="h3" component="div" sx={{ fontFamily: "Montserrat" }}>
-                      Stun Zeed
-                    </Typography>
                   </ThemeProvider>
                 </Paper>
               </Fade>
               <div ref={aboutRef}>
-                <FadeInBox>
-                  <Paper sx={{ padding: 5, background: "#3d5afe", color: "white" }}>
-                    <ThemeProvider theme={theme}>
-                      <Typography variant="h2" component="div" sx={{ fontFamily: "Montserrat" }}>
-                        About
-                      </Typography>
-                    </ThemeProvider>
-                  </Paper>
-                </FadeInBox>
+                <AboutBox />
               </div>
               <div ref={expRef}>
-                <FadeInBox>
-                  <Paper sx={{ padding: 5, background: "#3d5afe", color: "white" }}>
-                    <ThemeProvider theme={theme}>
-                      <Typography variant="h2" component="div" sx={{ fontFamily: "Montserrat" }}>
-                        Experience
-                      </Typography>
-                    </ThemeProvider>
-                  </Paper>
-                </FadeInBox>
+                <ExperienceBox />
               </div>
               <div ref={projRef}>
-                <FadeInBox>
-                  <Paper sx={{ padding: 5, background: "#3d5afe", color: "white" }}>
-                    <ThemeProvider theme={theme}>
-                      <Typography variant="h2" component="div" sx={{ fontFamily: "Montserrat" }}>
-                        Projects
-                      </Typography>
-                    </ThemeProvider>
-                  </Paper>
-                </FadeInBox>
+                <ProjectBox />
               </div>
               <div ref={eduRef}>
-                <FadeInBox>
-                  <Paper sx={{ padding: 5, background: "#3d5afe", color: "white" }}>
-                    <ThemeProvider theme={theme}>
-                      <Typography variant="h2" component="div" sx={{ fontFamily: "Montserrat" }}>
-                        Education
-                      </Typography>
-                    </ThemeProvider>
-                  </Paper>
-                </FadeInBox>
+                <EducationBox />
               </div>
               <div ref={skillRef}>
-                <FadeInBox>
-                  <Paper sx={{ padding: 5, background: "#3d5afe", color: "white" }}>
-                    <ThemeProvider theme={theme}>
-                      <Typography variant="h2" component="div" sx={{ fontFamily: "Montserrat" }}>
-                        Skills
-                      </Typography>
-                    </ThemeProvider>
-                  </Paper>
-                </FadeInBox>
+                <SkillsBox />
               </div>
               <div ref={contactRef}>
-                <FadeInBox>
-                  <Paper sx={{ padding: 5, background: "#3d5afe", color: "white" }}>
-                    <ThemeProvider theme={theme}>
-                      <Typography variant="h2" component="div" sx={{ fontFamily: "Montserrat" }}>
-                        Contact
-                      </Typography>
-                    </ThemeProvider>
-                  </Paper>
-                </FadeInBox>
+                <ContactBox />
               </div>
               <IconButton
-                sx={{
-                ':hover': {
-                  backgroundColor: '#424242',
-                },
+                sx={{ ':hover': { backgroundColor: '#424242' },
                 color: "white",
                 position: 'flex',
                 bottom: 0

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
@@ -20,6 +20,9 @@ export default function NavBar(props) {
   const handleIconClick = () => {
     setOpen(!open);
   };
+  useEffect(() => {
+    setOpen(false);
+  }, [wide] );
   if (wide) {
     return (
       <Box sx={{ flexGrow: 1 }}>
@@ -31,11 +34,8 @@ export default function NavBar(props) {
                   key={index}
                   onClick={props.scrollArray[index]}
                   color="inherit"
-                  sx={{
-                    ':hover': {
-                      bgcolor: 'white',
-                      color: 'black',
-                    },
+                  sx={{ 
+                    ':hover': { bgcolor: 'white', color: 'black'},
                     margin: 2
                   }}>
                   {label}
@@ -70,11 +70,9 @@ export default function NavBar(props) {
             <Box sx={{ flexGrow: 1, bgcolor: "black", height: "100vh", borderBottom: "solid gray 1px", px: 2 }}>
               <ListItem sx={{ justifyContent: "right" }}>
                 <IconButton
-                  sx={{
-                  ':hover': {
-                    backgroundColor: '#424242',
-                  },
-                  color: "white",
+                  sx={{ 
+                    ':hover': { backgroundColor: '#424242' },
+                    color: "white",
                   }}
                   onClick={handleIconClick}
                 >
@@ -88,9 +86,7 @@ export default function NavBar(props) {
                   onClick={props.scrollArray[index]}
                   onClickCapture={handleIconClick}
                   sx={{
-                    ':hover': {
-                      backgroundColor: '#424242',
-                    },
+                    ':hover': { backgroundColor: '#424242' },
                     borderRadius: 4,
                   }}>
                   <ListItemText
