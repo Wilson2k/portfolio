@@ -50,15 +50,17 @@ export default function NavBar(props) {
     return (
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="fixed" elevation={0} sx={{ bgcolor: "transparent" }}>
-          <Toolbar position="fixed" sx={{ justifyContent: "left" }}>
-            <IconButton
-              color='inherit'
-              edge='start'
-              onClick={handleIconClick}
-            >
-              <MenuIcon />
-            </IconButton>
-          </Toolbar>
+          <Grow in={true} timeout={2000} unmountOnExit>
+            <Toolbar position="fixed" sx={{ justifyContent: "left" }}>
+              <IconButton
+                color='inherit'
+                edge='start'
+                onClick={handleIconClick}
+              >
+                <MenuIcon />
+              </IconButton>
+            </Toolbar>
+          </Grow>
         </AppBar>
         <Toolbar position="fixed" sx={{ bgcolor: "black" }} />
         <Drawer
