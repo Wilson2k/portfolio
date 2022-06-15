@@ -13,6 +13,9 @@ export default function AboutBox() {
           <Typography variant="h2" component="div" sx={{ fontFamily: "Montserrat" }}>
             About
           </Typography>
+          <Typography variant="h5" component="div" sx={{ fontFamily: "Montserrat" }}>
+            Hi, my name is Wilson Chen. I graduated from University of California, Santa Cruz in 2022. I am an aspiring software engineer.
+          </Typography>
         </ThemeProvider>
       </Paper>
     </FadeInSection>

@@ -16,7 +16,6 @@ import ContactBox from './components/InfoBoxes/ContactBox';
 import EducationBox from './components/InfoBoxes/EducationBox';
 import ProjectBox from './components/InfoBoxes/ProjectsBox';
 import SkillsBox from './components/InfoBoxes/SkillsBox';
-import ExperienceBox from './components/InfoBoxes/ExperienceBox';
 
 
 // Function that creates a state for scrolling to a section of page
@@ -29,7 +28,6 @@ const useScroll = () => {
 function App() {
   // React states for scrolling to sections of page
   const [aboutScroll, aboutRef] = useScroll();
-  const [expScrolll, expRef] = useScroll();
   const [projScroll, projRef] = useScroll();
   const [eduScroll, eduRef] = useScroll();
   const [skillScroll, skillRef] = useScroll();
@@ -45,7 +43,7 @@ function App() {
     <DimensionsProvider>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container>
-          <NavBar scrollArray={[aboutScroll, expScrolll, projScroll, eduScroll, skillScroll, contactScroll]}/>
+          <NavBar scrollArray={[aboutScroll, projScroll, eduScroll, skillScroll, contactScroll]}/>
           <Grid item xs={12}>
             <Paper square
               sx={{
@@ -63,9 +61,6 @@ function App() {
               </Fade>
               <div ref={aboutRef}>
                 <AboutBox />
-              </div>
-              <div ref={expRef}>
-                <ExperienceBox />
               </div>
               <div ref={projRef}>
                 <ProjectBox />

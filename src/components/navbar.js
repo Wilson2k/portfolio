@@ -13,7 +13,7 @@ import ListItemText from '@mui/material/ListItemText';
 import { useDimensions } from '../util/DimensionsProvider';
 
 export default function NavBar(props) {
-  const navButtons = ["About", "Experience", "Projects", "Education", "Skills", "Contact"];
+  const navButtons = ["About", "Projects", "Education", "Skills", "Contact"];
   const { width } = useDimensions();
   const wide = (width > 750 ? true : false);
   const [open, setOpen] = useState(false);
