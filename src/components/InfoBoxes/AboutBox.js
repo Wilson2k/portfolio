@@ -7,7 +7,7 @@ import theme from '../../util/ResponsiveFont';
 
 export default function AboutBox() {
   return (
-      <Paper square={true} sx={{ padding: 5, background: "black", color: "white"}}>
+      <Paper square={true} sx={{ padding: 5, background: "linear-gradient(0deg, rgba(19,39,79,1) 0%, rgba(0,100,183,1) 100%)", color: "white"}}>
         <FadeInSection>
         <ThemeProvider theme={theme}>
           <Typography variant="h2" component="div" sx={{ fontFamily: "Open Sans" }}>

@@ -47,7 +47,7 @@ function MainPage() {
                 background: "black",
               }}>
               <Fade in={true}>
-                <Paper square sx={{ paddingLeft: 10, paddingRight: 10, paddingTop: 5, background: "black", color: "white", height: "100vh" }}>
+                <Paper square sx={{ paddingLeft: 10, paddingRight: 10, paddingTop: 5, background: "linear-gradient(180deg, rgba(0,0,0,1) 15%, rgba(0,100,183,1) 100%)", color: "white", height: "100vh" }}>
                   <ThemeProvider theme={theme}>
                     <Typography variant="h2" component="div" sx={{ fontFamily: "Open Sans" }}>
                     <Typewriter
@@ -85,7 +85,7 @@ function MainPage() {
                 sx={{ ':hover': { backgroundColor: '#424242' },
                 color: "white",
                 position: 'flex',
-                bottom: 10,
+                margin: 1
                 }}
                 onClick={scrollToTop}
               >

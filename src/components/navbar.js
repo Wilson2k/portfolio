@@ -49,7 +49,7 @@ export default function NavBar(props) {
   } else {
     return (
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="fixed" elevation={0} sx={{ bgcolor: "black", borderBottom: "solid gray 1px"  }}>
+        <AppBar position="static" elevation={0} sx={{ bgcolor: "black", borderBottom: "solid gray 1px"  }}>
           <Grow in={true} timeout={2000} unmountOnExit>
             <Toolbar position="fixed" sx={{ justifyContent: "left" }}>
               <IconButton
@@ -65,14 +65,13 @@ export default function NavBar(props) {
             </Toolbar>
           </Grow>
         </AppBar>
-        <Toolbar position="fixed" sx={{ bgcolor: "black" }} />
         <Drawer
             variant='temporary'
             anchor='top'
             open={open}
             sx={{ background: 'black'}}
           >
-            <Box sx={{ flexGrow: 1, bgcolor: "black", height: "100vh", borderBottom: "solid gray 1px", px: 2 }}>
+            <Box sx={{ flexGrow: 1, bgcolor: "black", height: "100vh", px: 2 }}>
               <ListItem sx={{ justifyContent: "right" }}>
                 <IconButton
                   sx={{ 
@@ -99,6 +98,7 @@ export default function NavBar(props) {
                     primaryTypographyProps={{
                       variant: 'h5',
                       fontWeight: 'medium',
+                      fontFamily: 'Open Sans'
                     }}
                     primary={label} />
                 </ListItem>

@@ -7,7 +7,7 @@ import theme from '../../util/ResponsiveFont';
 
 export default function SkillsBox() {
   return (
-    <Paper square={true} sx={{ padding: 5, background: "black", color: "white" }}>
+    <Paper square={true} sx={{ padding: 5, background: "linear-gradient(180deg, rgba(10,20,41,1) 0%, rgba(0,0,0,1) 75%)", color: "white" }}>
       <FadeInSection>
         <ThemeProvider theme={theme}>
           <Typography variant="h2" component="div" sx={{ fontFamily: "Open Sans" }}>
