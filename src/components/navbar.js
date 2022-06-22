@@ -13,7 +13,7 @@ import ListItemText from '@mui/material/ListItemText';
 import { useDimensions } from '../util/DimensionsProvider';
 
 export default function NavBar(props) {
-  const navButtons = ["About", "Projects", "Education", "Skills", "Contact"];
+  const navButtons = ["About", "Projects", "Skills", "Contact"];
   const { width } = useDimensions();
   const wide = (width > 750 ? true : false);
   const [open, setOpen] = useState(false);
@@ -49,11 +49,14 @@ export default function NavBar(props) {
   } else {
     return (
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="fixed" elevation={0} sx={{ bgcolor: "transparent" }}>
+        <AppBar position="fixed" elevation={0} sx={{ bgcolor: "black", borderBottom: "solid gray 1px"  }}>
           <Grow in={true} timeout={2000} unmountOnExit>
             <Toolbar position="fixed" sx={{ justifyContent: "left" }}>
               <IconButton
-                color='inherit'
+                sx={{ 
+                  ':hover': { backgroundColor: '#424242' },
+                  color: "white",
+                }}
                 edge='start'
                 onClick={handleIconClick}
               >

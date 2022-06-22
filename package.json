@@ -11,8 +11,9 @@
     "@material-ui/icons": "*",
     "@mui/material": "*",
     "prop-types": "*",
-    "react": "*",
-    "react-dom": "*"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "*",

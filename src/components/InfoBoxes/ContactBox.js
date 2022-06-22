@@ -7,14 +7,14 @@ import theme from '../../util/ResponsiveFont';
 
 export default function ContactBox() {
   return (
-    <FadeInSection>
-      <Paper sx={{ padding: 5, background: "#3d5afe", color: "white" }}>
+    <Paper square={true} sx={{ padding: 5, background: "black", color: "white" }}>
+      <FadeInSection>
         <ThemeProvider theme={theme}>
-          <Typography variant="h2" component="div" sx={{ fontFamily: "Montserrat" }}>
+          <Typography variant="h2" component="div" sx={{ fontFamily: "Open Sans" }}>
             Contact
           </Typography>
         </ThemeProvider>
-      </Paper>
-    </FadeInSection>
+      </FadeInSection>
+    </Paper>
   );
 }
