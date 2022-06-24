@@ -4,6 +4,7 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Fade from '@mui/material/Fade';
 import NavBar from './NavBar';
+import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import IconButton from '@mui/material/IconButton';
@@ -47,25 +48,32 @@ function MainPage() {
                 background: "black",
               }}>
               <Fade in={true}>
-                <Paper square sx={{ paddingLeft: 10, paddingRight: 10, paddingTop: 5, background: "linear-gradient(180deg, rgba(0,0,0,1) 15%, rgba(0,100,183,1) 100%)", color: "white", height: "100vh" }}>
+                <Paper elevation={0} square sx={{ display: "flex", justifyContent: "center", paddingLeft: 10, paddingRight: 10, paddingTop: 10, background: "linear-gradient(180deg, rgba(0,0,0,1) 15%, rgba(0,100,183,1) 100%)", color: "white", height: "100vh" }}>
                   <ThemeProvider theme={theme}>
-                    <Typography variant="h2" component="div" sx={{ fontFamily: "Open Sans" }}>
-                    <Typewriter
-                      onInit={(typewriter) => {
-                        typewriter
-                          .pauseFor(2500)
-                          .typeString('Hello!')
-                          .pauseFor(2000)
-                          .deleteAll()
-                          .typeString('I\'m Wilson, an aspiring software engineer from San Francisco.')
-                          .pauseFor(2000)
-                          .callFunction(() => {
-                            document.querySelectorAll(".Typewriter__cursor")[0].style.display = "none";
-                          })
-                          .start();
-                      }}
-                    />
-                    </Typography>
+                      <Typography variant="h2" component="div" sx={{ fontFamily: "Open Sans", alignSelf: "start" }}>
+                      <Typewriter
+                        onInit={(typewriter) => {
+                          typewriter
+                            .pauseFor(2500)
+                            .typeString('Hello!')
+                            .pauseFor(2000)
+                            .deleteAll()
+                            .typeString('I\'m Wilson, an aspiring software engineer from San Francisco.')
+                            .pauseFor(2000)
+                            .callFunction(() => {
+                              document.querySelectorAll(".Typewriter__cursor")[0].style.display = "none";
+                            })
+                            .start();
+                        }}
+                      />
+                      </Typography>
+                      <Paper elevation={0} sx={{position: 'absolute', alignSelf: "center", background: "transparent"}}>
+                      <Avatar
+                        alt="Wilson Chen"
+                        src="/static/images/avatar/1.jpg"
+                        sx={{ width: 300, height: 300, border: "0.5px solid black" }}
+                      />
+                      </Paper>
                   </ThemeProvider>
                 </Paper>
               </Fade>
@@ -78,9 +86,6 @@ function MainPage() {
               <div ref={skillRef}>
                 <SkillsBox />
               </div>
-              <div ref={contactRef}>
-                <ContactBox />
-              </div>
               <IconButton
                 sx={{ ':hover': { backgroundColor: '#424242' },
                 color: "white",
@@ -91,6 +96,9 @@ function MainPage() {
               >
                 <KeyboardArrowUpIcon />
               </IconButton>
+              <div ref={contactRef}>
+                <ContactBox />
+              </div>
             </Paper>
           </Grid>
         </Grid>

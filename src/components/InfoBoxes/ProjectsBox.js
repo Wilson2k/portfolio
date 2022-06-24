@@ -8,29 +8,30 @@ import Typography from '@mui/material/Typography';
 import { ThemeProvider } from '@mui/material/styles';
 import FadeInSection from '../../util/FadeInSection';
 import theme from '../../util/ResponsiveFont';
+import IslandReservation from '../../imgs/IslandReservation.jpg';
 
 export default function ProjectBox() {
   return (
-    <Paper square={true} sx={{ padding: 5, background: "linear-gradient(180deg, rgba(19,39,79,1) 0%, rgba(10,20,41,1) 75%)", color: "white" }}>
+    <Paper elevation={0} square={true} sx={{ display: "flex", justifyContent: "center", padding: 5, background: "linear-gradient(180deg, rgba(19,39,79,1) 0%, rgba(10,20,41,1) 75%)", color: "white" }}>
       <FadeInSection>
         <ThemeProvider theme={theme}>
           <Typography variant="h2" component="div" sx={{ fontFamily: "Open Sans" }}>
             Projects
           </Typography>
-          <Card sx={{ maxWidth: 360 }}>
+          <Card sx={{ color: "white", background: "#212121", margin: 5, maxWidth: 360 }}>
             <CardActionArea>
               <CardMedia
                 component="img"
                 height="200"
-                image="../assets/"
+                image={IslandReservation}
                 alt="Island Reservation"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                   Island Reservation
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  An Airbnb type website for uploading and reserving islands.
+                <Typography variant="body2" color="#bdbdbd">
+                  An Airbnb inspired website for uploading and reserving islands.
                 </Typography>
               </CardContent>
             </CardActionArea>

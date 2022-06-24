@@ -36,7 +36,8 @@ export default function NavBar(props) {
                   color="inherit"
                   sx={{ 
                     ':hover': { bgcolor: 'white', color: 'black'},
-                    margin: 2
+                    margin: 2,
+                    fontFamily: "Open Sans"
                   }}>
                   {label}
                 </Button>
