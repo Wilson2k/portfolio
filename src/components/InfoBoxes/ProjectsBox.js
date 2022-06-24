@@ -31,7 +31,7 @@ export default function ProjectBox() {
                   Island Reservation
                 </Typography>
                 <Typography variant="body2" color="#bdbdbd">
-                  An Airbnb inspired website for uploading and reserving islands.
+                  An Airbnb inspired website for uploading and reserving islands. Created with a MongoDB, Express, React, and Node (MERN) stack.
                 </Typography>
               </CardContent>
             </CardActionArea>
@@ -46,10 +46,10 @@ export default function ProjectBox() {
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  Island Reservation
+                  Facebook Marketplace Clone
                 </Typography>
                 <Typography variant="body2" color="#bdbdbd">
-                  An Airbnb inspired website for uploading and reserving islands.
+                  A clone of Facebook marketplace using a Node, Express, React, and PostgreSQL (NERP) stack.
                 </Typography>
               </CardContent>
             </CardActionArea>
