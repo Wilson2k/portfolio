@@ -59,7 +59,7 @@ function MainPage() {
                       <Typewriter
                         onInit={(typewriter) => {
                           typewriter
-                            .pauseFor(2500)
+                            .pauseFor(2000)
                             .typeString('Hello!')
                             .pauseFor(2000)
                             .deleteAll()
@@ -78,7 +78,7 @@ function MainPage() {
                         <Avatar
                           alt="Wilson Chen"
                           src={Headshot}
-                          sx={{ width: 300, height: 300, border: "1px solid black" }}
+                          sx={{ width: 300, height: 300, border: "0.5px solid black" }}
                         />
                       </Grow>
                       </Paper>

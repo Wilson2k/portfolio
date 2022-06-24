@@ -14,7 +14,8 @@ export default function AboutBox() {
             About
           </Typography>
           <Typography variant="h4" component="div" sx={{ marginTop: 5, fontFamily: "Open Sans" }}>
-            I graduated from University of California, Santa Cruz in 2022. I am an aspiring software engineer.
+            I graduated from University of California, Santa Cruz in 2022 with a BS in Computer Science.
+            I love learning and creating things with new technology.
           </Typography>
         </ThemeProvider>
         </FadeInSection>
