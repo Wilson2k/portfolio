@@ -11,13 +11,13 @@ export default function ContactBox() {
   return (
     <Paper square={true} sx={{ borderTop: "1px solid grey", padding: 2, background: "black", color: "white" }}>
         <ThemeProvider theme={theme}>
-          <IconButton aria-label="GitHub" color="primary">
+          <IconButton aria-label="GitHub" color="primary" target="_blank" rel="noopener noreferrer" href="https://github.com/Wilson2k">
             <GitHub />
           </IconButton>
-          <IconButton aria-label="GitHub" color="primary">
+          <IconButton aria-label="GitHub" color="primary" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/wilsonchen2000/">
             <LinkedIn />
           </IconButton>
-          <IconButton aria-label="GitHub" color="primary">
+          <IconButton aria-label="GitHub" color="primary" target="_blank" rel="noopener noreferrer" href="mailto:wilsonchen819@gmail.com">
             <Mail />
           </IconButton>
         </ThemeProvider>
