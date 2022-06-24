@@ -18,7 +18,25 @@ export default function ProjectBox() {
           <Typography variant="h2" component="div" sx={{ fontFamily: "Open Sans" }}>
             Projects
           </Typography>
-          <Card sx={{ color: "white", background: "#212121", margin: 5, maxWidth: 360 }}>
+          <Card sx={{ color: "white", background: "#212121", margin: 5, mb: 0, maxWidth: 380 }}>
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                height="200"
+                image={IslandReservation}
+                alt="Island Reservation"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  Island Reservation
+                </Typography>
+                <Typography variant="body2" color="#bdbdbd">
+                  An Airbnb inspired website for uploading and reserving islands.
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+          <Card sx={{ color: "white", background: "#212121", margin: 5, mb: 0, maxWidth: 380 }}>
             <CardActionArea>
               <CardMedia
                 component="img"

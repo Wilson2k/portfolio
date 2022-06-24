@@ -8,7 +8,7 @@ import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid';
 
 export default function SkillsBox() {
-  const skillArray = ["React", "NodeJS", "Express", "JavaScript", "C++", "Python", "PostgreSQL", "HTML", "CSS"];
+  const skillArray = ["React", "NodeJS", "Express", "JavaScript", "Java", "C++", "C", "Python", "PostgreSQL", "HTML", "CSS"];
   return (
     <Paper square={true} sx={{ padding: 5, background: "linear-gradient(180deg, rgba(10,20,41,1) 0%, rgba(0,0,0,1) 75%)", color: "white" }}>
       <FadeInSection>
@@ -23,7 +23,7 @@ export default function SkillsBox() {
             sx={{mt: 5}}>
             <Grid item>
             {skillArray.map((skill, index) => (
-              <Chip sx={{ml: 1, mr: 1, mt: 1}} key={index} label={skill} color="primary"/>
+              <Chip sx={{ml: 1, mr: 1, mt: 1, color: "white", background: "#0d47a1"}} key={index} label={skill} />
             ))}
             </Grid>
           </Grid>

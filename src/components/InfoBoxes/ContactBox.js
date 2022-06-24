@@ -5,6 +5,7 @@ import theme from '../../util/ResponsiveFont';
 import IconButton from '@mui/material/IconButton';
 import { GitHub } from '@material-ui/icons';
 import { LinkedIn } from '@material-ui/icons';
+import { Mail } from '@material-ui/icons';
 
 export default function ContactBox() {
   return (
@@ -15,6 +16,9 @@ export default function ContactBox() {
           </IconButton>
           <IconButton aria-label="GitHub" color="primary">
             <LinkedIn />
+          </IconButton>
+          <IconButton aria-label="GitHub" color="primary">
+            <Mail />
           </IconButton>
         </ThemeProvider>
     </Paper>

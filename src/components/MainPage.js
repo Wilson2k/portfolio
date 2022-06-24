@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import IconButton from '@mui/material/IconButton';
 import DimensionsProvider from '../util/DimensionsProvider';
+import { Grow } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../util/ResponsiveFont';
 // Import info sections of page
@@ -17,6 +18,8 @@ import ContactBox from './InfoBoxes/ContactBox';
 import ProjectBox from './InfoBoxes/ProjectsBox';
 import SkillsBox from './InfoBoxes/SkillsBox';
 import Typewriter from 'typewriter-effect';
+// Import headshot photo
+import Headshot from '../imgs/WC.png';
 
 
 // Function that creates a state for scrolling to a section of page
@@ -32,6 +35,8 @@ function MainPage() {
   const [projScroll, projRef] = useScroll();
   const [skillScroll, skillRef] = useScroll();
   const [contactScroll, contactRef] = useScroll();
+  // State to show headshot after typing is done
+  const [typing, setTyping] = useState(false);
   // Function for button at bottom of page that scrolls to top
   const scrollToTop = () => {
     window.scrollTo(0,0);
@@ -62,17 +67,20 @@ function MainPage() {
                             .pauseFor(2000)
                             .callFunction(() => {
                               document.querySelectorAll(".Typewriter__cursor")[0].style.display = "none";
+                              setTyping(true);
                             })
                             .start();
                         }}
                       />
                       </Typography>
                       <Paper elevation={0} sx={{position: 'absolute', alignSelf: "center", background: "transparent"}}>
-                      <Avatar
-                        alt="Wilson Chen"
-                        src="/static/images/avatar/1.jpg"
-                        sx={{ width: 300, height: 300, border: "0.5px solid black" }}
-                      />
+                      <Grow in={typing} timeout={1000}>
+                        <Avatar
+                          alt="Wilson Chen"
+                          src={Headshot}
+                          sx={{ width: 300, height: 300, border: "1px solid black" }}
+                        />
+                      </Grow>
                       </Paper>
                   </ThemeProvider>
                 </Paper>
@@ -90,7 +98,7 @@ function MainPage() {
                 sx={{ ':hover': { backgroundColor: '#424242' },
                 color: "white",
                 position: 'flex',
-                margin: 1
+                mb: 2
                 }}
                 onClick={scrollToTop}
               >
