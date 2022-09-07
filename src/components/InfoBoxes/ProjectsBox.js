@@ -9,6 +9,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import FadeInSection from '../../util/FadeInSection';
 import theme from '../../util/ResponsiveFont';
 import IslandReservation from '../../imgs/IslandReservation.jpg';
+import StockSplunk from '../../imgs/StockSplunk.jpg';
 
 export default function ProjectBox() {
   return (
@@ -19,19 +20,21 @@ export default function ProjectBox() {
             Projects
           </Typography>
           <Card sx={{ color: "white", background: "#212121", margin: 5, mb: 0, maxWidth: 380 }}>
-            <CardActionArea>
+            <CardActionArea target="_blank" rel="noopener noreferrer" href='https://stocksplunk.com'>
               <CardMedia
                 component="img"
                 height="200"
-                image={IslandReservation}
-                alt="Island Reservation"
+                image={StockSplunk}
+                alt="StockSplunk"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  Island Reservation
+                  StockSplunk
                 </Typography>
-                <Typography variant="body2" color="#bdbdbd">
-                  An Airbnb inspired website for uploading and reserving islands. Created with a MongoDB, Express, React, and Node (MERN) stack.
+                <Typography variant="body1" color="#bdbdbd">
+                  A website for simulating long term stock investments. Integrates AlphaVantage API for semi-live stock data.
+                  <hr/>
+                  <strong>Tools:</strong> Angular, Express, MongoDB, Node, Bootstrap.
                 </Typography>
               </CardContent>
             </CardActionArea>
@@ -46,10 +49,32 @@ export default function ProjectBox() {
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  Facebook Marketplace Clone
+                  Island Reservation
                 </Typography>
-                <Typography variant="body2" color="#bdbdbd">
-                  A clone of Facebook marketplace using a Node, Express, React, and PostgreSQL (NERP) stack.
+                <Typography variant="body1" color="#bdbdbd">
+                  An Airbnb inspired website for uploading and reserving islands.
+                  <hr/>
+                  <strong>Tools:</strong> React, Express, MongoDB, Node, Bootstrap.
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+          <Card sx={{ color: "white", background: "#212121", margin: 5, mb: 0, maxWidth: 380 }}>
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                height="200"
+                image={IslandReservation}
+                alt="Island Reservation"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  Mugtome Bazar
+                </Typography>
+                <Typography variant="body1" color="#bdbdbd">
+                  A clone of Facebook marketplace with authentication.
+                  <hr/>
+                  <strong>Tools:</strong> PostgreSQL, Express, React, Node.
                 </Typography>
               </CardContent>
             </CardActionArea>
