@@ -10,6 +10,7 @@ import FadeInSection from '../../util/FadeInSection';
 import theme from '../../util/ResponsiveFont';
 import IslandReservation from '../../imgs/IslandReservation.jpg';
 import StockSplunk from '../../imgs/StockSplunk.jpg';
+import MugtomeBazar from '../../imgs/MugtomeBazar.jpg';
 
 export default function ProjectBox() {
   return (
@@ -32,7 +33,7 @@ export default function ProjectBox() {
                   StockSplunk
                 </Typography>
                 <Typography variant="body1" color="#bdbdbd">
-                  A website for simulating long term stock investments. Integrates AlphaVantage API for semi-live stock data.
+                  A website for simulating long term stock investments. Integrates AlphaVantage API for semi-live stock data.                  
                   <hr/>
                   <strong>Tools:</strong> Angular, Express, MongoDB, Node, Bootstrap.
                 </Typography>
@@ -64,7 +65,7 @@ export default function ProjectBox() {
               <CardMedia
                 component="img"
                 height="200"
-                image={IslandReservation}
+                image={MugtomeBazar}
                 alt="Island Reservation"
               />
               <CardContent>
