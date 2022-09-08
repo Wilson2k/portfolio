@@ -19,7 +19,7 @@ import ProjectBox from './InfoBoxes/ProjectsBox';
 import SkillsBox from './InfoBoxes/SkillsBox';
 import Typewriter from 'typewriter-effect';
 // Import headshot photo
-import Headshot from '../imgs/WC.png';
+import Headshot from '../imgs/WC.jpg';
 
 
 // Function that creates a state for scrolling to a section of page
@@ -53,7 +53,7 @@ function MainPage() {
                 background: "black",
               }}>
               <Fade in={true}>
-                <Paper elevation={0} square sx={{ display: "flex", justifyContent: "center", paddingLeft: 10, paddingRight: 10, paddingTop: 10, background: "linear-gradient(180deg, rgba(0,0,0,1) 15%, rgba(0,100,183,1) 100%)", color: "white", height: "100vh" }}>
+                <Paper elevation={0} square sx={{ display: "flex", justifyContent: "center", paddingLeft: 10, paddingRight: 10, paddingTop: 10, background: "linear-gradient(180deg, rgba(0,0,0,1) 15%, rgba(0,100,183,1) 100%)", color: "white", height: "90vh" }}>
                   <ThemeProvider theme={theme}>
                       <Typography variant="h2" component="div" sx={{ fontFamily: "Open Sans", alignSelf: "start" }}>
                       <Typewriter
@@ -73,12 +73,12 @@ function MainPage() {
                         }}
                       />
                       </Typography>
-                      <Paper elevation={0} sx={{position: 'absolute', alignSelf: "center", background: "transparent"}}>
+                      <Paper elevation={0} sx={{position: 'absolute', alignSelf: "center", background: "transparent", marginTop: 10}}>
                       <Grow in={typing} timeout={1000}>
                         <Avatar
                           alt="Wilson Chen"
                           src={Headshot}
-                          sx={{ width: 300, height: 300, border: "0.5px solid black" }}
+                          sx={{ width: 325, height: 325, border: "0.5px solid black" }}
                         />
                       </Grow>
                       </Paper>

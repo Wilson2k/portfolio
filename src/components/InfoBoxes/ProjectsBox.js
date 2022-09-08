@@ -53,7 +53,7 @@ export default function ProjectBox() {
                   Island Reservation
                 </Typography>
                 <Typography variant="body1" color="#bdbdbd">
-                  An Airbnb inspired website for uploading and reserving islands.
+                  A website for those looking to rent out their islands, and book other people's islands.
                   <hr/>
                   <strong>Tools:</strong> React, Express, MongoDB, Node, Bootstrap.
                 </Typography>
