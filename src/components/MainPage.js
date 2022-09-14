@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Fade from '@mui/material/Fade';
-import NavBar from './NavBar';
+import NavBar from './Navbar';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
