@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Fade from '@mui/material/Fade';
-import NavBar from './NavBar';
+import NavBar from './Navbar';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
@@ -59,22 +59,23 @@ function MainPage() {
                       <Typewriter
                         onInit={(typewriter) => {
                           typewriter
-                            .pauseFor(2000)
                             .typeString('Hello!')
-                            .pauseFor(2000)
+                            .pauseFor(500)
                             .deleteAll()
-                            .typeString('I\'m Wilson, an aspiring software engineer from San Francisco.')
-                            .pauseFor(2000)
+                            .callFunction(() => {
+                              setTyping(true);
+                            })
+                            .typeString('I\'m Wilson, an aspiring software engineer.')
+                            .pauseFor(500)
                             .callFunction(() => {
                               document.querySelectorAll(".Typewriter__cursor")[0].style.display = "none";
-                              setTyping(true);
                             })
                             .start();
                         }}
                       />
                       </Typography>
                       <Paper elevation={0} sx={{position: 'absolute', alignSelf: "center", background: "transparent", marginTop: 10}}>
-                      <Grow in={typing} timeout={1000}>
+                      <Grow in={typing} timeout={1500}>
                         <Avatar
                           alt="Wilson Chen"
                           src={Headshot}

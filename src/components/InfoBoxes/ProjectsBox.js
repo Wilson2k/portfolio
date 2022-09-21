@@ -11,6 +11,7 @@ import theme from '../../util/ResponsiveFont';
 import IslandReservation from '../../imgs/IslandReservation.jpg';
 import StockSplunk from '../../imgs/StockSplunk.jpg';
 import MugtomeBazar from '../../imgs/MugtomeBazar.jpg';
+import ChooseMyMeal from '../../imgs/ChooseMyMeal.jpg';
 
 export default function ProjectBox() {
   return (
@@ -41,6 +42,26 @@ export default function ProjectBox() {
             </CardActionArea>
           </Card>
           <Card sx={{ color: "white", background: "#212121", margin: 5, mb: 0, maxWidth: 380 }}>
+            <CardActionArea target="_blank" rel="noopener noreferrer" href='https://foodapp-wilson2k.vercel.app'>
+              <CardMedia
+                component="img"
+                height="200"
+                image={ChooseMyMeal}
+                alt="Choose My Meal"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  Choose My Meal
+                </Typography>
+                <Typography variant="body1" color="#bdbdbd">
+                  A simple web app that helps randomly pick a place to eat by integrating Yelp Fusion API.
+                  <hr/>
+                  <strong>Tools:</strong> React, Next.js, MUI
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+          <Card sx={{ color: "white", background: "#212121", margin: 5, mb: 0, maxWidth: 380 }}>
             <CardActionArea>
               <CardMedia
                 component="img"
@@ -66,7 +87,7 @@ export default function ProjectBox() {
                 component="img"
                 height="200"
                 image={MugtomeBazar}
-                alt="Island Reservation"
+                alt="Mugtome Bazar"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
