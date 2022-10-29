@@ -1,3 +1,3 @@
 # Wilson Chen's portfolio
 
-Made with React and MUI
+A single page web app made with React and MUI functional components.
