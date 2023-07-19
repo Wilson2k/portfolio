@@ -90,7 +90,7 @@ export default function ProjectBox() {
                 component="img"
                 height={400}
                 image={MugtomeBazar}
-                alt="Island Reservation"
+                alt="Mugtome Bazar"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
