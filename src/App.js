@@ -15,11 +15,11 @@ function App() {
   useEffect(() => {
     // Scroll to top on refresh
     window.scrollTo(0,0);
-    // Wait for for 1.5-2 seconds before displaying page
+    // Wait for for .9-1.5 seconds before displaying page
     // Give psuedo random loading time effect
     setTimeout(() => {
       setIsLoading(false);
-    }, getRandomIntInclusive(1500, 2000));
+    }, getRandomIntInclusive(900, 1500));
   }, []);
   return isLoading ?
     <LoadingPage /> :

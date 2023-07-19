@@ -1,15 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
-import Fade from '@mui/material/Fade';
 import NavBar from './NavBar';
-import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import IconButton from '@mui/material/IconButton';
 import DimensionsProvider from '../util/DimensionsProvider';
-import { Grow } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../util/ResponsiveFont';
 // Import info sections of page
@@ -18,8 +15,6 @@ import ContactBox from './InfoBoxes/ContactBox';
 import ProjectBox from './InfoBoxes/ProjectsBox';
 import SkillsBox from './InfoBoxes/SkillsBox';
 import Typewriter from 'typewriter-effect';
-// Import headshot photo
-import Headshot from '../imgs/WC.jpg';
 
 
 // Function that creates a state for scrolling to a section of page
@@ -35,83 +30,81 @@ function MainPage() {
   const [projScroll, projRef] = useScroll();
   const [skillScroll, skillRef] = useScroll();
   const [contactScroll, contactRef] = useScroll();
-  // State to show headshot after typing is done
-  const [typing, setTyping] = useState(false);
   // Function for button at bottom of page that scrolls to top
   const scrollToTop = () => {
-    window.scrollTo(0,0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   return (
     <DimensionsProvider>
-      <Box sx={{ flexGrow: 1 }}>
-        <Grid container>
-          <NavBar scrollArray={[aboutScroll, projScroll, skillScroll, contactScroll]}/>
-          <Grid item xs={12}>
-            <Paper square
-              sx={{
-                textAlign: "center",
-                background: "black",
-              }}>
-              <Fade in={true}>
-                <Paper elevation={0} square sx={{ display: "flex", justifyContent: "center", paddingLeft: 10, paddingRight: 10, paddingTop: 10, background: "linear-gradient(180deg, rgba(0,0,0,1) 15%, rgba(0,100,183,1) 100%)", color: "white", height: "90vh" }}>
-                  <ThemeProvider theme={theme}>
-                      <Typography variant="h2" component="div" sx={{ fontFamily: "Open Sans", alignSelf: "start" }}>
-                      <Typewriter
-                        onInit={(typewriter) => {
-                          typewriter
-                            .pauseFor(2000)
-                            .typeString('Hello!')
-                            .pauseFor(2000)
-                            .deleteAll()
-                            .typeString('I\'m Wilson, an aspiring software engineer from San Francisco.')
-                            .pauseFor(2000)
-                            .callFunction(() => {
-                              document.querySelectorAll(".Typewriter__cursor")[0].style.display = "none";
-                              setTyping(true);
-                            })
-                            .start();
-                        }}
-                      />
-                      </Typography>
-                      <Paper elevation={0} sx={{position: 'absolute', alignSelf: "center", background: "transparent", marginTop: 10}}>
-                      <Grow in={typing} timeout={1000}>
-                        <Avatar
-                          alt="Wilson Chen"
-                          src={Headshot}
-                          sx={{ width: 325, height: 325, border: "0.5px solid black" }}
-                        />
-                      </Grow>
-                      </Paper>
-                  </ThemeProvider>
+      <Box sx={{ display: 'flex', margin: 0, padding: 0, justifyContent: 'center' }}>
+        <Grid item xs={12}>
+          <Paper
+            square={true}
+            elevation={0}
+            sx={{
+              textAlign: "center",
+              background: "#161b25",
+            }}>
+            <NavBar scrollArray={[aboutScroll, projScroll, skillScroll, contactScroll]}/>
+            <Paper elevation={0} square sx={{ display: "flex", justifyContent: "center", background: "#161b25", height: "95vh" }}>
+              <ThemeProvider theme={theme}>
+                <Paper elevation={0} sx={{ alignSelf: "center", textAlign: 'center', background: "transparent", marginTop: 10, color: "white" }}>
+                  <Typography variant="h2" component="div" sx={{ fontFamily: "Segoe UI", textAlign: "center", fontWeight: 'medium' }}>
+                    Wilson Chen
+                  </Typography>
+                  <Typography variant="h2" component="div" sx={{ fontFamily: "Segoe UI", justifyContent: 'center', fontWeight: 'medium', display: 'flex', flexFlow: 'row', flexWrap: 'wrap' }}>
+                    I am a{'\u00A0'}
+                    <Typewriter
+                      sx={{ display: 'inline' }}
+                      options={{
+                        strings: [
+                          '<span style="color: #27ae60;">Software Engineer</span>',
+                          '<span style="color: #27ae60;">Web Developer</span>',
+                          '<span style="color: #27ae60;">Teacher</span>',
+                          '<span style="color: #27ae60;">Learner</span>',
+                        ],
+                        autoStart: true,
+                        loop: true,
+                        delay: 60,
+                        pauseFor: 1500
+                      }}
+                    >
+                    </Typewriter>
+                  </Typography>
                 </Paper>
-              </Fade>
-              <div ref={aboutRef}>
-                <AboutBox />
-              </div>
-              <div ref={projRef}>
-                <ProjectBox />
-              </div>
-              <div ref={skillRef}>
-                <SkillsBox />
-              </div>
-              <IconButton
-                sx={{ ':hover': { backgroundColor: '#424242' },
-                color: "white",
-                position: 'flex',
-                mb: 2
-                }}
-                onClick={scrollToTop}
-              >
-                <KeyboardArrowUpIcon />
-              </IconButton>
-              <div ref={contactRef}>
-                <ContactBox />
-              </div>
+              </ThemeProvider>
             </Paper>
-          </Grid>
+            <div ref={aboutRef}>
+              <AboutBox />
+            </div>
+            <div ref={projRef}>
+              <ProjectBox />
+            </div>
+            <div ref={skillRef}>
+              <SkillsBox />
+            </div>
+            <div>
+              <Paper square={true} sx={{ padding: 0, background: "#161b25" }}>
+                <IconButton
+                  sx={{
+                    ':hover': { backgroundColor: '#424242' },
+                    color: "white",
+                    position: 'flex',
+                    mb: 2
+                  }}
+                  onClick={scrollToTop}
+                >
+                  <KeyboardArrowUpIcon />
+                </IconButton>
+              </Paper>
+            </div>
+            <div ref={contactRef}>
+              <ContactBox />
+            </div>
+          </Paper>
         </Grid>
-      </Box>
-    </DimensionsProvider>
+      </Box >
+    </DimensionsProvider >
   );
 }
 

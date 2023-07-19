@@ -9,15 +9,15 @@ import { Mail } from '@material-ui/icons';
 
 export default function ContactBox() {
   return (
-    <Paper square={true} sx={{ borderTop: "1px solid grey", padding: 2, background: "black", color: "white" }}>
+    <Paper square={true} sx={{ borderTop: "1px solid #30363d", padding: 2, background: "#161b25", color: "white" }}>
         <ThemeProvider theme={theme}>
-          <IconButton aria-label="GitHub" color="primary" target="_blank" rel="noopener noreferrer" href="https://github.com/Wilson2k">
+          <IconButton aria-label="GitHub" sx={{color: '#27ae60'}}  target="_blank" rel="noopener noreferrer" href="https://github.com/Wilson2k">
             <GitHub />
           </IconButton>
-          <IconButton aria-label="GitHub" color="primary" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/wilsonchen2000/">
+          <IconButton aria-label="LinkedIn" sx={{color: '#27ae60'}}  target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/wilsonchen2000/">
             <LinkedIn />
           </IconButton>
-          <IconButton aria-label="GitHub" color="primary" target="_blank" rel="noopener noreferrer" href="mailto:wilsonchen819@gmail.com">
+          <IconButton aria-label="Email" sx={{color: '#27ae60'}} target="_blank" rel="noopener noreferrer" href="mailto:wilsonchen819@gmail.com">
             <Mail />
           </IconButton>
         </ThemeProvider>
