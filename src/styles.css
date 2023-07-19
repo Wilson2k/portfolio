@@ -17,3 +17,28 @@ html {
 body {
   background-color: #161b25;
 }
+
+.MuiButtonBase-root.MuiTab-root {
+  color: gray;
+  font-size: small;
+  border-radius: 8px 8px 0 0;
+  
+  &:hover {
+    color: white;
+  }
+}
+
+.MuiButtonBase-root.MuiTab-root.Mui-selected {
+  color: white;
+  border-top: 2px solid #30363d;
+  border-left: 2px solid #30363d;
+  border-right: 2px solid #30363d;
+  background-color: #161b25;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: inline-block;
+}
