@@ -81,7 +81,7 @@ export default function ProjectBox() {
               </IconButton>
             </Stack>
             <ProjectTabs
-              about={'A website for simulating long term stock investments. Integrates AlphaVantage API for semi-live stock data.'}
+              about={'A website for simulating long term stock investments. Integrates AlphaVantage API for semi-live stock data. Caches stock data with Redis for better performance.'}
               tools={'Angular, Express, MongoDB, Redis, Node, Bootstrap, Docker'} />
             <Box sx={{ p: 2, background: '#161b25', color: 'gray', borderTop: '1px solid #30363d', display: 'flex' }}>
               <Chip icon={<span className="dot" style={{ backgroundColor: 'yellow' }} />} label="JavaScript" sx={{ color: 'gray' }} />
