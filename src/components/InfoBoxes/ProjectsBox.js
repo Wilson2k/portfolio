@@ -19,11 +19,11 @@ export default function ProjectBox() {
       <hr />
       <FadeInSection>
         <ThemeProvider theme={theme}>
-          <Typography variant="h4" component="div" mt={5} sx={{ fontFamily: "Segoe UI", fontWeight: 'medium' }}>
+          <Typography variant="h4" component="div" mt={5} sx={{ fontFamily: ["Segoe UI", "Tahoma"], fontWeight: 'medium' }}>
             Projects
           </Typography>
           <hr style={{ marginBottom: "3rem", width: "10%", borderColor: "#27ae60"}}/>
-          <Card sx={{ color: "white", background: "#212121", margin: 5, mb: 0, maxWidth: 720}}>
+          <Card sx={{ color: "white", background: "#212121", mb: 0,  maxWidth: 'calc(100% - 40px)', margin: 'auto'}}>
             <CardActionArea target="_blank" rel="noopener noreferrer" href='https://stocksplunk.com'>
               <CardMedia
                 component="img"

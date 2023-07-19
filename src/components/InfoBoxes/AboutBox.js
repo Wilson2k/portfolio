@@ -14,7 +14,7 @@ export default function AboutBox() {
       <hr />
       <FadeInSection>
         <ThemeProvider theme={theme}>
-          <Typography variant="h4" component="div" mt={5} sx={{ fontFamily: "Segoe UI", fontWeight: 'medium' }}>
+          <Typography variant="h4" component="div" mt={5} sx={{ fontFamily: ["Segoe UI", "Tahoma"], fontWeight: 'medium' }}>
             About
           </Typography>
           <hr style={{ marginBottom: "3rem", width: "10%", borderColor: "#27ae60" }} />
@@ -24,7 +24,7 @@ export default function AboutBox() {
             sx={{ width: 325, height: 325, display: 'inline-block' }}
           />
           <Paper elevation={0} square={true} sx={{ display: 'flex', justifyContent: 'center', background: "#161b25", color: "white" }}>
-            <Typography component="div" sx={{ marginTop: 5, marginInline: "20%", fontFamily: "Segoe UI", textAlign: "left", fontSize: 20 }}>
+            <Typography component="div" sx={{ marginTop: 5, marginInline: "20%", fontFamily: ["Segoe UI", "Tahoma"], textAlign: "left", fontSize: 20 }}>
               <p>Hello, my name is Wilson. I am a solutions oriented full-stack developer that is passionate about learning and growing as a developer.</p>
               <p>I currently work as a Coding Coach at The CoderSchool, teaching students the fundamentals of programming in Python, JavaScript, and HTML/CSS.
                 As a coach I'm adaptable, logical, and collaborative. The students are my clients, and teaching them how to program helps us both grow.

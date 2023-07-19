@@ -49,10 +49,10 @@ function MainPage() {
             <Paper elevation={0} square sx={{ display: "flex", justifyContent: "center", background: "#161b25", height: "95vh" }}>
               <ThemeProvider theme={theme}>
                 <Paper elevation={0} sx={{ alignSelf: "center", textAlign: 'center', background: "transparent", marginTop: 10, color: "white" }}>
-                  <Typography variant="h2" component="div" sx={{ fontFamily: "Segoe UI", textAlign: "center", fontWeight: 'medium' }}>
+                  <Typography variant="h2" component="div" sx={{ fontFamily: ["Segoe UI", "Tahoma"], textAlign: "center", fontWeight: 'medium' }}>
                     Wilson Chen
                   </Typography>
-                  <Typography variant="h2" component="div" sx={{ fontFamily: "Segoe UI", justifyContent: 'center', fontWeight: 'medium', display: 'flex', flexFlow: 'row', flexWrap: 'wrap' }}>
+                  <Typography variant="h2" component="div" sx={{ fontFamily: ["Segoe UI", "Tahoma"], justifyContent: 'center', fontWeight: 'medium', display: 'flex', flexFlow: 'row', flexWrap: 'wrap' }}>
                     I am a{'\u00A0'}
                     <Typewriter
                       sx={{ display: 'inline' }}

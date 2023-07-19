@@ -25,7 +25,7 @@ export default function NavBar(props) {
   const navButtons = ["About", "Projects", "Skills", "Contact"];
   const navIcons = [<PersonIcon />, <FolderIcon />, <AccountTreeIcon />, <EmailIcon />];
   const { width } = useDimensions();
-  const wide = (width > 750 ? true : false);
+  const wide = (width > 1440 ? true : false);
   const [open, setOpen] = useState(false);
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -82,7 +82,7 @@ export default function NavBar(props) {
                   sx={{
                     ':hover': { bgcolor: 'white', color: 'black' },
                     margin: 2,
-                    fontFamily: "Segoe UI"
+                    fontFamily: ["Segoe UI", "Tahoma"]
                   }}>
                   {label}
                 </Button>
@@ -165,7 +165,7 @@ export default function NavBar(props) {
                 primaryTypographyProps={{
                   variant: 'h5',
                   fontWeight: 'small',
-                  fontFamily: 'Segoe UI'
+                  fontFamily: ["Segoe UI", "Tahoma"]
                 }}
                 primary={label} />
             </ListItem>

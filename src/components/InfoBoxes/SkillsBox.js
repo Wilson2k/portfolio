@@ -14,7 +14,7 @@ export default function SkillsBox() {
       <hr />
       <FadeInSection>
         <ThemeProvider theme={theme}>
-          <Typography variant="h4" component="div" mt={5} sx={{ fontFamily: "Segoe UI", fontWeight: 'medium' }}>
+          <Typography variant="h4" component="div" mt={5} sx={{ fontFamily: ["Segoe UI", "Tahoma"], fontWeight: 'medium' }}>
             Skills
           </Typography>
           <hr style={{ marginBottom: "3rem", width: "10%", borderColor: "#27ae60"}}/>
