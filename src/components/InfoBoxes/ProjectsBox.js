@@ -15,7 +15,7 @@ import ChooseMyMeal from '../../imgs/ChooseMyMeal.jpg'
 
 export default function ProjectBox() {
   return (
-    <Paper elevation={0} square={true} sx={{ padding: 3, background: "#161b25", color: "white", display: 'flex', justifyContent: 'center' }}>
+    <Paper elevation={0} square={true} sx={{ padding: 3, background: "#161b25", color: "white" }}>
       <hr />
       <FadeInSection>
         <ThemeProvider theme={theme}>
