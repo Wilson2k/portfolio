@@ -25,11 +25,15 @@ export default function AboutBox() {
           />
           <Paper elevation={0} square={true} sx={{ display: 'flex', justifyContent: 'center', background: "#161b25", color: "white" }}>
             <Typography component="div" sx={{ marginTop: 5, marginInline: "20%", fontFamily: ["Segoe UI", "Tahoma"], textAlign: "left", fontSize: 20 }}>
-              <p>Hello, my name is Wilson. I am a solutions oriented full-stack developer that is passionate about learning and growing as a developer.</p>
-              <p>I currently work as a Coding Coach at The CoderSchool, teaching students the fundamentals of programming in Python, JavaScript, and HTML/CSS.
+              <p>
+                Hello, my name is Wilson. I'm a solutions oriented full-stack developer that is passionate about education, personal finance, and technology.
+              </p>
+              <p>I currently work as a Coding Coach at The Coder School, teaching students the fundamentals of programming in Python, JavaScript, and HTML/CSS.
                 As a coach I'm adaptable, logical, and collaborative. The students are my clients, and teaching them how to program helps us both grow.
               </p>
-              <p>When I'm not coaching, I'm working hard to create web apps with new tools and expand my skill set as a developer.</p>
+              <p>
+                When I'm not teaching, I'm working hard to create web apps with new tools and to expand and refine my skill set as a developer.
+              </p>
             </Typography>
           </Paper>
         </ThemeProvider>
