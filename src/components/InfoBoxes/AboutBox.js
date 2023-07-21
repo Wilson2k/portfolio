@@ -32,7 +32,7 @@ export default function AboutBox() {
                 As a coach I'm adaptable, logical, and collaborative. The students are my clients, and teaching them how to program helps us both grow.
               </p>
               <p>
-                When I'm not teaching, I'm working hard to create web apps with new tools and to expand and refine my skill set as a developer.
+                When I'm not teaching, I'm learning new tools to further refine and expand my skill set as a developer.
               </p>
             </Typography>
           </Paper>
